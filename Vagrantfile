@@ -31,7 +31,8 @@ Vagrant.configure(2) do |config|
       }
     }
     chef.add_recipe("dev-tools")
-   chef.add_recipe("nginx")
-   chef.add_recipe("rbenv")
+    chef.add_recipe("nginx")
+    chef.add_recipe("rbenv")
+    chef.add_recipe("oracle-java")
   end
 end
