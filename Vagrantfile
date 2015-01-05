@@ -28,11 +28,15 @@ Vagrant.configure(2) do |config|
       :rbenv => {
         :user => "vagrant",
         :version => "2.2.0"
+      },
+      :elasticsearch => {
+        :version => "1.4.2"
       }
     }
     chef.add_recipe("dev-tools")
     chef.add_recipe("nginx")
     chef.add_recipe("rbenv")
     chef.add_recipe("oracle-java")
+    chef.add_recipe("elasticsearch")
   end
 end
