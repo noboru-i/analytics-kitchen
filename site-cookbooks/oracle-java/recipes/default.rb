@@ -29,5 +29,6 @@ end
 
 package 'oracle-java8-installer' do
     action :upgrade
+    timeout 36000
 end
 

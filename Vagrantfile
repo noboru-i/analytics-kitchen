@@ -3,7 +3,7 @@
 
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.hostname = "analytics-kitchen"
+  config.vm.hostname = "analytics-kitchen.local"
 
   config.vm.network :private_network, ip: "192.168.50.31"
 
@@ -30,7 +30,11 @@ Vagrant.configure(2) do |config|
         :version => "2.2.0"
       },
       :elasticsearch => {
-        :version => "1.4.2"
+        :version => "1.4.4"
+      },
+      :kibana => {
+        :user => "vagrant",
+        :version => "4.0.1"
       }
     }
     chef.add_recipe("dev-tools")
@@ -38,5 +42,6 @@ Vagrant.configure(2) do |config|
     chef.add_recipe("rbenv")
     chef.add_recipe("oracle-java")
     chef.add_recipe("elasticsearch")
+    chef.add_recipe("kibana")
   end
 end

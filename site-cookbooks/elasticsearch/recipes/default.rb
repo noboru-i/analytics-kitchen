@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-version = node[:elasticsearch][:version] || '1.4.2'
+version = node[:elasticsearch][:version] || '1.4.4'
 filename = "elasticsearch-#{version}.deb"
 
 remote_file "#{Chef::Config[:file_cache_path]}/#{filename}" do
